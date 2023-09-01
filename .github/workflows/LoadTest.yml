@@ -1,1 +1,20 @@
+name: Load Test - Teste de Carga
 
+on:
+  workflow_call: #quando outra rotina chamar
+
+jobs:
+
+  LoadTest:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: executa o checkout 
+      uses: actions/checkout@v3 #sempre o primeiro a ser executado, costuma apagar arquivos
+      
+    - name: Configurando Credenciais AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
