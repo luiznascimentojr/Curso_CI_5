@@ -21,3 +21,6 @@ jobs:
 
     - name: Clonando repositorio Infra
       run: git cloneh ttps://github.com/luiznascimentojr/Infra_CI.git
+
+    - name: HashiCorp - Setup Terraform
+      uses: hashicorp/setup-terraform@v2.0.3
